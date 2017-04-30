@@ -1,0 +1,24 @@
+diff --git a/thpp/build.sh b/thpp/build.sh
+index 838560c..1c5a9f5 100755
+--- a/thpp/build.sh
++++ b/thpp/build.sh
+@@ -15,14 +15,11 @@ if [[ ! -r ./Tensor.h ]]; then
+   exit 1
+ fi
+
+-rm -rf gtest-1.7.0 gtest-1.7.0.zip
+-curl -JLO https://googletest.googlecode.com/files/gtest-1.7.0.zip
+-if [[ $(sha1sum -b gtest-1.7.0.zip | cut -d' ' -f1) != \
+-      'f85f6d2481e2c6c4a18539e391aa4ea8ab0394af' ]]; then
+-  echo "Invalid gtest-1.7.0.zip file" >&2
+-  exit 1
+-fi
+-unzip gtest-1.7.0.zip
++git clone https://github.com/google/googletest.git
++cd goolgetest
++git checkout release-1.7.0
++cd ../
++mv googletest gtest-1.7.0
+
+ # Build in a separate directory
+ mkdir -p build
