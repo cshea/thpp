@@ -15,7 +15,7 @@ index 838560c..1c5a9f5 100755
 -fi
 -unzip gtest-1.7.0.zip
 +git clone https://github.com/google/googletest.git
-+cd goolgetest
++cd googletest
 +git checkout release-1.7.0
 +cd ../
 +mv googletest gtest-1.7.0
